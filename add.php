@@ -1,5 +1,25 @@
 <?php
 
+$title = $desc = '';
+	$errors = array('title' => '', 'desc' => '');
+
+
+if(isset($_POST['submit'])){
+    		// check title
+		if(empty($_POST['title'])){
+			$errors['title'] = 'A title is required';
+        } 
+
+        //Checking is valid or not if yes move to index page
+		if(array_filter($errors)){
+			//echo 'errors in form';
+		} else {
+			//echo 'form is valid';
+			header('Location: index.php');
+		}
+		
+}// end POST check
+
 ?>
 
 <!DOCTYPE html>
@@ -11,12 +31,12 @@
 
 <section class="continer grey-text">
     <h4 class="center">Add a note </h4>
-    <form class="white" action="" method="">
+    <form class="white" action="add.php" method="POST">
 <br>
-        <input type="text" placeholder="Title" name="title" id="">
+        <input type="text" name="title" value="<?php echo htmlspecialchars($title) ?>" placeholder="Title">
+			<div class="red-text"><?php echo $errors['title']; ?></div>
         <br> 
-        <input type="text" name="desc" id="" placeholder="Take a note">
-
+        <input type="text" name="desc" id="" placeholder="Take a note" >
         <div class="center">
             <br>
             <input type="submit" value="Add" name="submit" class="btn brand z-depth-0 ">
