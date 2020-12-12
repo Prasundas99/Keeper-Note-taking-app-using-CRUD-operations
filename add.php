@@ -1,5 +1,9 @@
 <?php
 
+include( 'config\db_connect.php ');
+
+
+
 $title = $desc = '';
 	$errors = array('title' => '', 'desc' => '');
 
@@ -14,8 +18,24 @@ if(isset($_POST['submit'])){
 		if(array_filter($errors)){
 			//echo 'errors in form';
 		} else {
-			//echo 'form is valid';
-			header('Location: index.php');
+            //echo 'form is valid';
+            
+            $title = mysqli_real_escape_string($conn , $_POST['title']);
+            $desc = mysqli_real_escape_string($conn , $_POST['desc']);
+
+            //create sql
+            $sql = "INSERT INTO `notes` (`title`, `desc`) VALUES( '$title' , '$desc' )";
+
+            // save to db and check
+            if(mysqli_query($conn,$sql)){
+                //success
+                header('Location: index.php');
+            } else{
+                //error
+                echo 'querrry error: ' . mysqli_error($conn);
+            }
+
+			
 		}
 		
 }// end POST check
