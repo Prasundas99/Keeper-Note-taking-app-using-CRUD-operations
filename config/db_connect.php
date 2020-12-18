@@ -1,7 +1,7 @@
 <?php
 //connect to database
 //mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
-$conn = mysqli_connect('localhost', 'Prasun','', 'keeper');
+$conn = mysqli_connect('https://phpkeeper.herokuapp.com/', 'Prasun','', 'keeper');
 
 // check connection
 	if(!$conn){
