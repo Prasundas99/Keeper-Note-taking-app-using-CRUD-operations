@@ -1,5 +1,5 @@
 ## Keeper
-Simple Note taking app using php and mysql db
+Note taking app in PHP using CRUD operations using mysqli
 
 ## Table of contents
 * [General info](#general-info)
