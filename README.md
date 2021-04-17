@@ -28,7 +28,7 @@ Opening above link you'll get the following screen
 
 
 ## Setup
-- Clone the repo: `https://github.com/coding-blocks/angry-coders-game.git`
+- Clone the repo: `https://github.com/Prasundas99/Keeper-Note-taking-app-using-CRUD-operations.git`
 -Download ZIP file
 
 
